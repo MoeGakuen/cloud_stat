@@ -33,9 +33,6 @@ class plugin_cloud_stat extends Plugin {
         $this->saveSetting('cloud_tieba', $data->tieba);
         $this->saveSetting('cloud_exp', $data->exp);
     }
-    function mklink($sourceFile, $targetFile) {
-        return @file_put_contents($targetFile, '<?php @include ' . var_export($sourceFile, true) . '; ?>');
-    }
     function on_upgrade($from_version) {
         switch ($from_version) {
             case '1.0':
